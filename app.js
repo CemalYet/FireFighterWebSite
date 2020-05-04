@@ -16,15 +16,21 @@ var express 		= 	require("express"),
 var sensorRoutes	=	require("./routes/sensors"),
 	indexRoutes	=	require("./routes/index")
 
-mongoose.connect('mongodb://localhost:27017/fire_fighter', 
-				 { useNewUrlParser: true,
-				  useUnifiedTopology: true,
-				  useFindAndModify:false,
-				  useCreateIndex: true }); 
+mongoose.connect('mongodb+srv://FireFighter:Cml%211907@cluster0-laoxm.mongodb.net/test?retryWrites=true&w=majority',{
+	useNewUrlParser:true,
+	useCreateIndex:true,
+	useFindAndModify:false,
+	useCreateIndex: true,
+	 useUnifiedTopology: true
+}).then(() => {
+	console.log('Connected to DB!');
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});
 
 setInterval(function()
-{ seedValue(2);
-}, 10000);
+{ seedValue(4);
+}, 30000);
 
 
 //seedDB();
@@ -63,6 +69,7 @@ app.use(indexRoutes);
 app.use("/sensors",sensorRoutes);
 
 
-app.listen( 3000,function(){
-	console.log("The FireFighter server has Started ");
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log("Server Has Started!");
 });

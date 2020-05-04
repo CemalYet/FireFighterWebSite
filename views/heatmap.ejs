@@ -97,6 +97,10 @@ var heatmapInstance = h337.create({
   // if you have a set of datapoints always use setData instead of addData
   // for data initialization
   heatmapInstance.setData(data);
+		 function timedRefresh(time) {
+	setTimeout("location.reload(true);", time);}
+	
+	timedRefresh(30000);
 </script>
 </body>
 
