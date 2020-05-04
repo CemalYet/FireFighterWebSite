@@ -1,0 +1,123 @@
+<%- include("partials/header") %>
+	<div class="container">
+		<header class="jumbotron justify-content-center">
+			<div class="container text-center m-3">
+
+				<h2 class="text-danger">Information about Sensor</h2>
+				<h3 class="text-danger">Training session
+					<%=sensor.values[0].tsession%>
+				</h3>
+			</div>
+		</header>
+				<div class="container">
+			<div class="row text-center">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<canvas id="myChart" width="500" height="250"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+     <script>
+		 var arr=[];
+		 var arr2=[];
+		 var time=[];
+		 var time2=[];
+		 var size=20
+		 arr.push(<%=data%>);
+		 time.push(<%=time%>);
+		 
+		 for(var i=0 ;i<size;i++){
+			 
+			arr2.unshift(arr.pop());
+			time2.unshift(time.pop());
+			 
+		 }
+		 
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels:time2,
+            datasets: [{
+                label: 'Temperatures',
+                data: arr2,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)'
+                    
+                ],
+                borderColor: [
+					'rgba(5, 0, 82, 1)',
+                    'rgba(255, 99, 132, 1)',                    
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+				fill: false,
+                borderWidth: 5
+            }]
+        },
+        options: {
+			 legend: {
+            labels: {
+                fontColor: "rgba(5, 0, 82, 1)",
+                fontSize: 18
+            }},
+            scales: { 
+				xAxes: [{
+					 scaleLabel: {
+        			display: true,
+        		labelString: 'Time(min.)',
+						 fontColor: "black",
+						 fontSize: 14
+      },
+					gridLines: {
+              
+                borderDash: [8, 4],
+                color: 'rgba(5, 0, 82, 1)'
+            },
+                    ticks: {
+						fontColor: "black",
+						fontSize: 14,
+                        beginAtZero: true
+                    }
+                }],
+                yAxes: [{
+					 scaleLabel: {
+        			display: true,
+        		labelString: 'Temperature(°C)',
+						 fontColor: "black",
+						 fontSize: 14
+      },
+					gridLines: {
+              
+                borderDash: [8, 4],
+                color: 'rgba(5, 0, 82, 1)'
+            },
+                    ticks: {
+						fontColor: "black",
+						fontSize: 18,
+                        beginAtZero: true
+                    }
+                }]
+          
+			},
+			animation: {
+        duration: 0
+    }
+    
+	 }
+			
+    });
+		 
+		 function timedRefresh(time) {
+	setTimeout("location.reload(true);", time);}
+	
+	timedRefresh(10000);
+    </script> 
+
+
+<%- include("partials/footer") %>

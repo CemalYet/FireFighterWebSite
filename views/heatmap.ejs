@@ -1,0 +1,108 @@
+<%- include("partials/header") %>
+
+<body>
+  
+  <div class="row mt-5 ">
+    <div class="col ">
+    
+  <div id='cemal' style='position: relative; width :1200px; height: 600px'>
+    <canvas id="heatMap" width = "1024" height = "500" style="position:absolute; left:0px; top:0px"></canvas>
+	  <div id="heatmapLegend">
+        <span id="min"></span>
+        <span id="max"></span>
+        <img id="gradient" src="" style="width:100%" />
+      </div>
+</div>
+</div>
+</div>
+<style>
+	body{
+		background:black;
+	}
+  #cemal{
+    margin-top: 3rem;
+ 
+  }
+</style>
+<script type="text/javascript" src="js/heatmap.js"> </script>
+<script>
+var heatmapInstance = h337.create({
+    container: document.getElementById('cemal')
+});
+	 var legendCanvas = document.createElement('canvas');
+        legendCanvas.width = 100;
+        legendCanvas.height = 10;
+
+        var legendCtx = legendCanvas.getContext('2d');
+        var gradientCfg = {};
+  
+   var cemal=[] ; 
+   function heatMap(sensor,V,V2){
+  var X=1200;
+  var begY=12;
+  
+ 
+  for (let j=6*(sensor-1);j<6*sensor;j++){
+    var val=V-((10-sensor)*j)-45;
+    var val2=V2-((10-sensor)*j);
+    var begX=X-(23*j);
+  for (let i = 0; i <30; i++) {
+    var ramazan =  
+    {
+    x:Number,
+    y:Number,
+    radius:Number,
+    value:Number
+    };
+
+    ramazan.x=begX;
+    ramazan.y=begY+((i)*20);
+    ramazan.radius=44;
+    if (i<=14) {
+      ramazan.value=val+3;
+      val=val+2;
+    }else{
+      ramazan.value=val2-3;
+      val2=val2-3;
+
+    }
+    
+     
+   
+    cemal.push(ramazan);
+    
+  }
+}
+  }
+	var val =[];
+	val.push(<%= lastValArr %>);
+  var i=0;
+  for (let index = 0; index < 10; index++) {
+    
+    heatMap(index+1,val[i],val[i+1]);
+    if (index %2==0) {
+      i++;
+    }
+ 
+  }
+ 
+  
+
+  // heatmap data format
+ var data = {
+    min:150,
+    max: 750,
+    data: cemal
+  };
+  // if you have a set of datapoints always use setData instead of addData
+  // for data initialization
+  heatmapInstance.setData(data);
+</script>
+</body>
+
+
+
+
+
+<%- include("partials/footer") %>
+
