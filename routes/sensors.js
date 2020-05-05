@@ -5,7 +5,7 @@ var passport = require("passport");
 
 
 
-router.get("/",isLoggedIn,function(req,res){	
+router.get("/",function(req,res){	
 	
 	Sensor.find({}).populate("values","value").exec(function(err,allSensors){
 		if(err)	{
