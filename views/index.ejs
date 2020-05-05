@@ -21,9 +21,9 @@
 						 <div class="card-body" >
 							<h4 class="card-title"> Sensor 
 								<%= sensor.sensorId%>
-								<p>
-									
+								<p><a href="/sensors/<%= sensor._id %>" class="btn btn-danger"><%= sensor.values.pop().value%> °C</a>
 								</p>
+								
 									<span>
 										<%= sensor.location %>
 									</span>

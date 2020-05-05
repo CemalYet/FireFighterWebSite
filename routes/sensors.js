@@ -7,7 +7,7 @@ var passport = require("passport");
 
 router.get("/",isLoggedIn,function(req,res){	
 	
-	Sensor.find({},function(err,allSensors){
+	Sensor.find({}).populate("values","value").exec(function(err,allSensors){
 		if(err)	{
 		console.log(err);
 	}else{
@@ -63,10 +63,27 @@ router.get("/:id",isLoggedIn,function(req,res){
 		//console.log(time);
 		res.render("show",{sensor: foundSensor, data: data, time: time});
 	}
+		});
+	
+});
+	router.get("/:id/pastsensordata",isLoggedIn,function(req,res){
+	
+	Sensor.findById(req.params.id).populate("values").exec(function(err,foundSensor){
+		var data =[];
+		if(err || !foundSensor)	{
+		req.flash("error","Sensor not found");
+			res.redirect("/sensors");
+		console.log(err);
+	}else{	
+		
+		res.render("pastsensordata",{sensor: foundSensor});
+	}
 	
 	
 });
+	
 	});
+	
 function isLoggedIn(req,res,next){//controls you logged in or not you can put wherever you want
 	if(req.isAuthenticated()){
 		return next();
