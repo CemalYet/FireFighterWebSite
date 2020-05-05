@@ -3,7 +3,7 @@
 		<header class="jumbotron justify-content-center">
 			<div class="container text-center m-3">
 
-				<h2 class="text-danger">Information about Sensor</h2>
+				<h2 class="text-danger">Information about Sensor-<%=sensor.sensorId%></h2>
 				<h3 class="text-danger">Training session
 					<%=sensor.values.pop().tsession%>
 				</h3>
@@ -31,8 +31,8 @@
 		 
 		 for(var i=0 ;i<size;i++){
 			 
-			arr2.unshift(arr.pop());
-			time2.unshift(time.pop());
+			arr2.unshift(arr.shift());
+			time2.unshift(time.shift());
 			 
 		 }
 		 

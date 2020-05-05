@@ -10,7 +10,8 @@ router.get("/heatmap",function(req,res){
 	
 	
 
-	Sensor.find({}).populate("values").exec(function(err,foundSensors){
+	Sensor.find({}).populate({path: 'values', options: { 
+		sort: { _id: -1 },limit:10 }}).exec(function(err,foundSensors){
 		var lastValArr=[];
 	  foundSensors.forEach(function(sensor){
 		  var lastValue=sensor.values.pop().value;

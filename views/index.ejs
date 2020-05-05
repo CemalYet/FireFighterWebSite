@@ -37,6 +37,10 @@
 				<% }); %>
 		</div>
 	
-
+<script>	
+	function timedRefresh(time) {
+	setTimeout("location.reload(true);", time);}	
+	timedRefresh(30000);
+</script>
 
 	<%- include("partials/footer") %>

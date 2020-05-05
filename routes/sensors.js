@@ -5,9 +5,10 @@ var passport = require("passport");
 
 
 
-router.get("/",function(req,res){	
+router.get("/",isLoggedIn,function(req,res){	
 	
-	Sensor.find({}).populate("values","value").exec(function(err,allSensors){
+	Sensor.find({}).populate({path: 'values', options: { 
+		sort: { _id: -1 },limit:1 }}).exec(function(err,allSensors){
 		if(err)	{
 		console.log(err);
 	}else{
@@ -39,7 +40,8 @@ router.get("/new",isLoggedIn,function(req,res){
 //SHOW -shows more info about one sensor
 router.get("/:id",isLoggedIn,function(req,res){
 	
-	Sensor.findById(req.params.id).populate("values").exec(function(err,foundSensor){
+	Sensor.findById(req.params.id).populate({path: 'values', options: { 
+		sort: { _id: -1 },limit:20 }}).exec(function(err,foundSensor){
 		var data =[];
 		var time =[];
 		var index=0;
