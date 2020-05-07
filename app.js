@@ -8,9 +8,10 @@ var express 		= 	require("express"),
 	Sensor 			= 	require("./models/sensor"),
 	Value 			= 	require("./models/value"),
 	User 			=	require("./models/user"),
-	seedDB			=	require("./seeds");
-	seedValue		=	require("./seeds");	
-	removeDB		=	require("./seeds");	
+	seedDB			=	require("./seeds"),
+	seedValue		=	require("./seeds"),
+	removeDB		=	require("./seeds")
+	
 	
 
 var sensorRoutes	=	require("./routes/sensors"),
