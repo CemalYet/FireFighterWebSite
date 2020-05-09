@@ -30,8 +30,8 @@ mongoose.connect('mongodb+srv://FireFighter:Cml%211907@cluster0-laoxm.mongodb.ne
 });
 
 setInterval(function()
-{ seedValue(2);
-}, 30000);
+{ seedValue(5);
+}, 1000);
 
 
 //seedDB();
