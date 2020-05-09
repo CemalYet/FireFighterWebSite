@@ -3,8 +3,8 @@
 	
 	 <header class="jumbotron">
          <div class="container text-center">
-             <h1><img src="https://img.icons8.com/ios-filled/100/000000/fire-truck.png"/><span>  FireFighters</span></h1>
-             <p>FireFighters save the world</p> 
+             <h1><img src="https://img.icons8.com/dotty/80/000000/fire-truck.png"/><span>  FireFighters</span></h1>
+             <p class="text-center">FireFighters save the world</p> 
              <p> <% if( currentUser && currentUser.isAdmin){%>
 				<a class="btn btn-primary btn-lg" href="/sensors/new">Add New Sensors</a>
 				 <%}%>
@@ -21,7 +21,7 @@
 						 <div class="card-body" >
 							<h4 class="card-title"> Sensor 
 								<%= sensor.sensorId%>
-								<p><a href="/sensors/<%= sensor._id %>" class="btn btn-danger">°C</a>
+								<p><a href="/sensors/<%= sensor._id %>" class="btn btn-danger"><%= sensor.values.pop().value%>°C</a>
 								</p>
 								
 									<span>
