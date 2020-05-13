@@ -6,9 +6,10 @@ var sensorsSchema = new mongoose.Schema({
 		{
 			type :mongoose.Schema.Types.ObjectId,
 			ref	:"Value"
+			
 		}
 	]
 
 })
-
+ sensorsSchema.index({ sensorId: 1, values: -1 });
 module.exports = mongoose.model("Sensor",sensorsSchema);

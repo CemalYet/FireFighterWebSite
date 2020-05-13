@@ -6,7 +6,7 @@ var SensorController = require('../controllers/SensorController');
 
 
 
-router.get("/",isLoggedIn,SensorController.SensorsList);
+router.get("/",SensorController.SensorsList);
 
 router.post("/",isLoggedIn,SensorController.AddNewSensor);
 
@@ -15,7 +15,7 @@ router.get("/new",isLoggedIn,function(req,res){
 });
 
 
-router.get("/:id",isLoggedIn,SensorController.MoreInfo);
+router.get("/:id",SensorController.MoreInfo);
 
 function isLoggedIn(req,res,next){//controls you logged in or not you can put wherever you want
 	if(req.isAuthenticated()){

@@ -5,7 +5,7 @@ var User = require('../models/user');
 var Sensor = require('../models/sensor');
 var IndexController = require('../controllers/IndexController');
 
-router.get('/heatmap',isLoggedIn, IndexController.HeatMapGet);
+router.get('/heatmap',IndexController.HeatMapGet);
 
 router.get('/', function(req, res) {
 	res.render('landing');

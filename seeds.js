@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var Sensor = require("./models/sensor");
 var Value   = require("./models/value");
-var Comment   = require("./models/comment");
+
  
 var seeds = [
     {
@@ -101,9 +101,9 @@ async function seedValue(tsession) {
 // CLEAN DATABASE
 async function removeDB() {
 	try {
-		await Sensor.deleteMany({});
-		await Value.deleteMany({});
-	
+		//await Sensor.deleteMany({});
+		await Value.deleteMany({ tsession: 5});
+		console.log("delete");
 	}catch {
 		console.log(err);
 	}
@@ -117,4 +117,4 @@ async function removeDB() {
 
 //module.exports = seedDB;
 module.exports = seedValue;
- //module.exports = removeDB;
+// module.exports = removeDB;

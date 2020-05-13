@@ -16,6 +16,14 @@ var express 		= 	require("express"),
 
 var sensorRoutes	=	require("./routes/sensors"),
 	indexRoutes	=	require("./routes/index")
+/*
+mongoose.connect('mongodb://localhost:27017/fire_fighter', 
+				 { useNewUrlParser: true,
+				  useUnifiedTopology: true,
+				  useFindAndModify:false,
+				  useCreateIndex: true });
+ */
+
 
 mongoose.connect('mongodb+srv://FireFighter:Cml%211907@cluster0-laoxm.mongodb.net/test?retryWrites=true&w=majority',{
 	useNewUrlParser:true,
@@ -28,6 +36,7 @@ mongoose.connect('mongodb+srv://FireFighter:Cml%211907@cluster0-laoxm.mongodb.ne
 }).catch(err => {
 	console.log('ERROR:', err.message);
 });
+
 /*
 setInterval(function()
 { seedValue(5);
@@ -35,7 +44,7 @@ setInterval(function()
 */
 
 //seedDB();
-//seedValue();
+//seedValue(2);
 //removeDB();
 
 
