@@ -11,20 +11,21 @@ var express 		= 	require("express"),
 	seedDB			=	require("./seeds"),
 	seedValue		=	require("./seeds"),
 	removeDB		=	require("./seeds")
+
 	
 	
 
 var sensorRoutes	=	require("./routes/sensors"),
 	indexRoutes	=	require("./routes/index")
-/*
+/* 
 mongoose.connect('mongodb://localhost:27017/fire_fighter', 
 				 { useNewUrlParser: true,
 				  useUnifiedTopology: true,
 				  useFindAndModify:false,
 				  useCreateIndex: true });
- */
+*/
 
-
+/**/
 mongoose.connect('mongodb+srv://FireFighter:Cml%211907@cluster0-laoxm.mongodb.net/test?retryWrites=true&w=majority',{
 	useNewUrlParser:true,
 	useCreateIndex:true,
@@ -37,6 +38,8 @@ mongoose.connect('mongodb+srv://FireFighter:Cml%211907@cluster0-laoxm.mongodb.ne
 	console.log('ERROR:', err.message);
 });
 
+
+
 /*
 setInterval(function()
 { seedValue(5);
@@ -46,7 +49,7 @@ setInterval(function()
 //seedDB();
 //seedValue(2);
 //removeDB();
-
+//app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine" ,"ejs");

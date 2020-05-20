@@ -9,5 +9,6 @@ var valueSchema = new mongoose.Schema({
 });
 
 
+
 valueSchema.index({ value: -1});
 module.exports = mongoose.model("Value",valueSchema);

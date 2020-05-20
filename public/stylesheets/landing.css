@@ -4,7 +4,7 @@ background: black;  /* fallback for old browsers */
 h1 {
   font-size: 4em;
   text-shadow: 2px 2px 10px black;
-font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Slab', serif;
 }
 
 #landing-header {
@@ -45,22 +45,22 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url(https://images6.alphacoders.com/613/613203.jpg) ;
+  background-image: url(./images/img1.jpg) ;
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(https://www.elsetge.cat/myimg/f/207-2074727_firefighter-desktop-wallpaper-fire-firefighters.jpg);
+  background-image: url(./images/img2.jpg);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(https://cdn.wallpapersafari.com/72/61/VkFIWc.jpg);
+  background-image: url(./images/img3.jpg);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(https://wallpaperplay.com/walls/full/1/d/a/172731.jpg);
+  background-image: url(./images/img4.jpg);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701062481-1200x800.jpg);
+  background-image: url(./images/img2.jpg);
   animation-delay: 40s; 
 }
 @keyframes imageAnimation { 

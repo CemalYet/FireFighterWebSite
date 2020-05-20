@@ -102,8 +102,9 @@ async function seedValue(tsession) {
 async function removeDB() {
 	try {
 		//await Sensor.deleteMany({});
-		await Value.deleteMany({ tsession: 5});
+		await Value.deleteMany({ tsession:3});
 		console.log("delete");
+		
 	}catch {
 		console.log(err);
 	}
@@ -116,5 +117,5 @@ async function removeDB() {
 
 
 //module.exports = seedDB;
-module.exports = seedValue;
-// module.exports = removeDB;
+//module.exports = seedValue;
+//module.exports = removeDB;

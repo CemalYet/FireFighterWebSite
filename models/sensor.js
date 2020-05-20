@@ -5,7 +5,8 @@ var sensorsSchema = new mongoose.Schema({
 	values: [
 		{
 			type :mongoose.Schema.Types.ObjectId,
-			ref	:"Value"
+			ref	:"Value",
+			
 			
 		}
 	]
