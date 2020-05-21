@@ -40,12 +40,11 @@ mongoose.connect('mongodb+srv://FireFighter:Cml%211907@cluster0-laoxm.mongodb.ne
 
 
 
-/**/
+/*
 setInterval(function()
 { seedValue(5);
 }, 30000);
-
-
+*/
 //seedDB();
 //seedValue(2);
 //removeDB();
