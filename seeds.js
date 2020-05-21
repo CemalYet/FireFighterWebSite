@@ -117,5 +117,5 @@ async function removeDB() {
 
 
 //module.exports = seedDB;
-//module.exports = seedValue;
+module.exports = seedValue;
 //module.exports = removeDB;
