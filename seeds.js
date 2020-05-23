@@ -101,8 +101,8 @@ async function seedValue(tsession) {
 // CLEAN DATABASE
 async function removeDB() {
 	try {
-		//await Sensor.deleteMany({});
-		await Value.deleteMany({ tsession:3});
+		await Sensor.deleteMany({});
+		await Value.deleteMany({});
 		console.log("delete");
 		
 	}catch {

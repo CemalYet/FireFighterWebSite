@@ -12,7 +12,7 @@ exports.SensorsList = function(req, res) {
 				sort: { _id: -1 },
 				limit: 1
 			},
-			select: 'value',
+			select: 'value'
 		})
 		.exec(function(err, allSensors) {
 			if (err) {

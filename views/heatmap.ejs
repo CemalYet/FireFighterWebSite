@@ -4,20 +4,20 @@
 </head>
 
 <body>
-  
-  <div class="row mt-5 ">
-    <div class="col ">
-    
-  <div id='cemal' style='position: relative; width :1200px; height: 600px'>
-    <canvas id="heatMap" width = "1024" height = "500" style="position:absolute; left:0px; top:0px"></canvas>
-	  <div id="heatmapLegend">
-        <span id="min"></span>
-        <span id="max"></span>
-        <img id="gradient" src="" style="width:100%" />
-      </div>
-</div>
-</div>
-</div>
+
+	<div class="row mt-5 ">
+		<div class="col ">
+
+			<div id='cemal' style='position: relative; width :1200px; height: 600px'>
+				<canvas id="heatMap" width="1024" height="500" style="position:absolute; left:0px; top:0px"></canvas>
+				<div id="heatmapLegend">
+					<span id="min"></span>
+					<span id="max"></span>
+					<img id="gradient" src="" style="width:100%" />
+				</div>
+			</div>
+		</div>
+	</div>
 <style>
 	body{
 		background:black;
@@ -34,7 +34,7 @@ var heatmapInstance = h337.create({
 });
 	 var legendCanvas = document.createElement('canvas');
         legendCanvas.width = 100;
-        legendCanvas.height = 10;
+        legendCanvas.height = 12;
 
         var legendCtx = legendCanvas.getContext('2d');
         var gradientCfg = {};
@@ -42,14 +42,14 @@ var heatmapInstance = h337.create({
    var cemal=[] ; 
    function heatMap(sensor,V,V2){
   var X=1200;
-  var begY=12;
+  var begY=5;
   
  
   for (let j=6*(sensor-1);j<6*sensor;j++){
     var val=V-((10-sensor)*j)-45;
     var val2=V2-((10-sensor)*j);
     var begX=X-(23*j);
-  for (let i = 0; i <30; i++) {
+  for (let i = 0; i <35; i++) {
     var ramazan =  
     {
     x:Number,
