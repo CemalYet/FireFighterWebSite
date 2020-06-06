@@ -1,8 +1,8 @@
-var express  = require("express");
-var router	 = express.Router();
-var Sensor	 = require("../models/sensor");
-var passport = require("passport");
-var SensorController = require('../controllers/SensorController');
+var express	 	= require("express");
+var router	 	= express.Router();
+var Sensor	 	= require("../models/sensor");
+var passport		= require("passport");
+var SensorController 	= require('../controllers/SensorController');
 
 
 
