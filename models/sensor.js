@@ -12,5 +12,5 @@ var sensorsSchema = new mongoose.Schema({
 	]
 
 })
- sensorsSchema.index({ sensorId: 1, values: -1 });
+ //sensorsSchema.index({ sensorId: 1, values: -1 });
 module.exports = mongoose.model("Sensor",sensorsSchema);
