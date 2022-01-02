@@ -9,4 +9,8 @@ individually via line charts and heatmap, by logging in as an admin the user has
 add or remove the sensor. While developing this site I focused on how a user can visualize, manipulate the data better and 
 faster during the fire training session.
 
-HTML/CSS,Node.js,MongoDB
+
+https://user-images.githubusercontent.com/64286000/147877970-0b7b8be2-8182-4c0a-be5b-8d5d7bd1ee60.mp4
+
+
+# HTML/CSS,Node.js,MongoDB
